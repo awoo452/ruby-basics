@@ -5,32 +5,50 @@
 # method name: #ascii_translator
 # parameter: number (an integer)
 # return value: the number's ASCII character (https://www.ascii-code.com/)
+def ascii_translator(number)
+    unless number.is_a? Numeric
+        return "A number was not entered."
+      end
+    number.chr
+end
 # hint: use Integer#chr
-
+    
 
 # method name: #common_sports
 # parameters: current_sports and favorite_sports (both arrays)
 # return value: an array containing items in both arrays
 # hint: use Array#intersection
-
-
+def common_sports(current_sports, favorite_sports)
+    current_sports & favorite_sports
+end
 # method name: #alphabetical_list
 # parameter: games (an array)
 # return value: games, alphabetically sorted and duplicates removed
 # hint: chain Array#sort and Array#uniq together
-
-
+def alphabetical_list(games)
+    games.uniq.sort
+end
 # method name: #lucky_number
 # parameter: number (an integer) with default value of 7
 # return value: a string "Today's lucky number is <number>"
-
+def lucky_number(number = 7)
+    unless number.is_a? Numeric
+        return "A number was not entered."
+    end
+    "Today's lucky number is " + number.to_s
+end
 
 # method name: #ascii_code
 # parameter: character (a string)
 # return value: the character's ordinal number
 # explicit return value: 'Input Error' if character's length does not equal 1
 # hint: use String#ord
-
+def ascii_code(string)
+    unless string.length == 1
+        return "Input Error"
+    end
+    string.ord
+end
 
 # method name: #pet_pun
 # parameter: animal (a string)
@@ -39,10 +57,25 @@
 # console output: if animal is 'dog', 'Dogs are paw-some!' (awesome)
 # console output: otherwise, "I think <animal>s have pet-tential!" (potential)
 # hint: use puts
-
+def pet_pun(animal = nil)
+    case animal
+    when 'cat'
+        puts "Cats are purr-fect!"
+    when 'dog'
+        puts "Dogs are paw-some!"
+    else
+        puts "I think " + animal + "s have pet-tential!"
+    end
+end
 
 # method name: #twenty_first_century?
 # parameter: year (an integer)
 # return value: true if the year is between 2001 - 2100, otherwise return false
 # hint: use Comparable#between?
 
+def twenty_first_century?(year)
+    unless year.is_a? Numeric
+        false
+    end
+    year.between?(2001, 2100)
+end
