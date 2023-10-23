@@ -11,13 +11,6 @@
     # irb -r ./caesar_cipher.rb will open this file in terminal
 
 def caesar_cipher(string, shift_factor)
-        def is_upper?
-          self == self.upcase
-        end
-      
-        def is_lower?
-          self == self.downcase
-        end
         # *** https://stackoverflow.com/questions/4846853/generate-array-of-all-letters-and-digits 
         # *** https://apidock.com/ruby/Kernel/Array/instance
     alphabet = 'a'.upto('z').to_a #This establishes an Array containing the alphabet, separated by letter
