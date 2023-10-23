@@ -5,6 +5,8 @@
 #> caesar_cipher("What a string!", 5)
 #=> "Bmfy f xywnsl!"
 
+    #This whole ass project could be revisited using chr or whatever https://ruby-doc.org/core-2.3.1/Integer.html#method-i-chr
+
     # *** https://www.digitalocean.com/community/tutorials/how-to-use-irb-to-explore-ruby#loading-your-code-into-irb 
     # irb -r ./caesar_cipher.rb will open this file in terminal
 
@@ -13,7 +15,7 @@ def caesar_cipher(string, shift_factor)
         # *** https://apidock.com/ruby/Kernel/Array/instance
     alphabet = 'a'.upto('z').to_a #This establishes a variable containing the alphabet, separated by letter as an Array
         # *** https://stackoverflow.com/questions/6085518/what-is-the-easiest-way-to-push-an-element-to-the-beginning-of-the-array
-    #alphabet.unshift(" ", "-") #This adds compatibility for strings containing spaces, dashes, etc. This can be revisited to further expand compatibility for provided characters but the logic is there. 
+    alphabet.unshift(" ", "-") #This adds compatibility for strings containing spaces, dashes, etc. This can be revisited to further expand compatibility for provided characters but the logic is there. 
     stringConvertedToArray = string.split("") #This takes the user provided "string", and converts it into an array separated by each individual character in the user provided string.
         # *** https://www.theodinproject.com/lessons/ruby-basic-enumerable-methods - Scroll to Map section
         # *** https://apidock.com/ruby/Array/index
