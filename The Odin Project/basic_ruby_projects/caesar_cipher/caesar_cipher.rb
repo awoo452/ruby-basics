@@ -1,11 +1,11 @@
-#Implement a caesar cipher that takes in a string and the shift factor and then outputs the modified string
+#Implements a caesar cipher that takes in a string and the shift factor and then outputs the modified string
 #It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. 
 #For example, with a left shift of 3, D would be replaced by A, E would become B, and so on.
 
 #> caesar_cipher("What a string!", 5)
 #=> "Bmfy f xywnsl!"
 
-    #This whole ass project could be revisited using chr or whatever https://ruby-doc.org/core-2.3.1/Integer.html#method-i-chr
+    #This was fun, but this whole ass project could be revisited using chr or whatever https://ruby-doc.org/core-2.3.1/Integer.html#method-i-chr
 
     # *** https://www.digitalocean.com/community/tutorials/how-to-use-irb-to-explore-ruby#loading-your-code-into-irb 
     # irb -r ./caesar_cipher.rb will open this file in terminal
@@ -19,7 +19,7 @@ def caesar_cipher(string, shift_factor)
     stringConvertedToArray = string.split("") #This takes the user provided "string", and converts it into an array separated by each individual character in the user provided string.
         # *** https://www.theodinproject.com/lessons/ruby-basic-enumerable-methods - Scroll to Map section
         # *** https://apidock.com/ruby/Array/index
-    arrayConvertedFromStringsToCharacters = stringConvertedToArray.map { |letter| alphabet.index(letter) } #for each letter in stringToArray, find the corresponding letter in the alphabet array and replace with the index of that letter within the alphabet.
+    arrayConvertedFromStringsToCharacters = stringConvertedToArray.map { |letter| alphabet.index(letter) } #for each letter in stringConvertedToArray, find the corresponding letter in the alphabet array and replace with the index of that letter within the alphabet.
     shiftFactoredArrayOfNumbers = arrayConvertedFromStringsToCharacters.map { |number| number + shift_factor } #add the user provided 'shift_factor' to each index value of this array.
         # *** https://stackoverflow.com/questions/26415380/replace-a-single-element-in-an-array
     shiftFactoredArrayOfNumbersWithoutOvers = shiftFactoredArrayOfNumbers.map { |number| number >= alphabet.count() ? number -= alphabet.count() : number } #If the number is > the total number of characters in the alphabet, restart at the beginning of the alphabet array
