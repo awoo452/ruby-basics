@@ -27,5 +27,5 @@ def caesar_cipher(string, shift_factor)
     shiftFactoredArrayOfNumbersWithoutOvers = shiftFactoredArrayOfNumbers.map { |number| number >= alphabet.count() ? number -= alphabet.count() : number } #If after shift factoring the number, the total is > the total number of characters in the alphabet array, restart at the beginning of the alphabet array
     shiftFactoredArrayOfNumbersWithoutOversOrUnders = shiftFactoredArrayOfNumbersWithoutOvers.map { |number| number < 0 ? number += alphabet.count() : number } #If after shift factoring the number, the total is < 0, reset the count by adding the total number of characters in the alphabet array so that it loops from z-a 
     shiftFactoredArrayOfCharacters = shiftFactoredArrayOfNumbersWithoutOversOrUnders.map { |number| alphabet[number] } #This compares the shifted number to the corresponding value contained at that index in the alphabet array and creates a new array containing these 'shifted' characters, thus completing the cipher
-    print shiftFactoredArrayOfCharacters
+    return shiftFactoredArrayOfCharacters
 end
