@@ -4,9 +4,9 @@ def substrings(words, dictionary)
     downcasedWords = words.downcase #bitch you're lowercase now
     arrayOfDowncasedWords = downcasedWords.split(" ") #this takes the user provided 'words' and converts it into an array of words, downcased, and separated by the user provided spaces.
      # *** https://www.theodinproject.com/lessons/ruby-basic-enumerable-methods - scroll to reduce section
-    results = arrayOfDowncasedWords.reduce(Hash.new(0)) do |instances, word| 
-        instances[word] += 1
-        instances
+    results = arrayOfDowncasedWords.reduce(Hash.new(0)) do |word, instances| 
+        word[instances] += 1
+        word
     end
     results
 end
